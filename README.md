@@ -48,8 +48,8 @@ var GUEST_LIST = ["Maria Clara", "João Pedro", "Ana"];
 
 ### Fotos
 
-Monograma, foto do casal e foto da recepção já estão no ar. Falta apenas a
-**foto da igreja** (`assets/igreja.jpg`) — é só colocar o arquivo na pasta
+Monograma, foto do casal e foto da cerimônia já estão no ar. Falta apenas a
+**foto da recepção** (`assets/recepcao.jpg`) — é só colocar o arquivo na pasta
 `assets/` com esse nome que ela aparece sozinha.
 
 Detalhes em `assets/LEIA-ME.md`.

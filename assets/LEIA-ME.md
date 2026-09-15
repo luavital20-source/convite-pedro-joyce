@@ -6,14 +6,14 @@
 |-------------------------|-------------------------------------------|--------|
 | `monograma.png`         | Capa (álbum) e topo do convite            | ✅ no ar |
 | `casal.jpg`             | Hero — logo abaixo de "Convidam você"     | ✅ no ar |
-| `recepcao.jpg`          | Card da **recepção**, abaixo do endereço  | ✅ no ar |
-| `igreja.jpg`            | Card da **cerimônia**, abaixo do endereço | ⬜ falta enviar |
+| `cerimonia.jpg`         | Card da **cerimônia**, abaixo do endereço | ✅ no ar |
+| `recepcao.jpg`          | Card da **recepção**, abaixo do endereço  | ⬜ falta enviar |
 | `casal-original.jpg`    | (só arquivo — a foto do casal sem corte)  | guardado |
 
 ## Como enviar a foto que falta
 
 Coloque o arquivo **nesta pasta** (`assets/`), com **exatamente** o nome
-`igreja.jpg` (minúsculo, sem acento). O convite já procura por ele — assim
+`recepcao.jpg` (minúsculo, sem acento). O convite já procura por ele — assim
 que o arquivo existir, a foto aparece sozinha, sem mexer em código.
 
 Sugestão: foto **horizontal** (paisagem), por volta de 1000 × 700px.
