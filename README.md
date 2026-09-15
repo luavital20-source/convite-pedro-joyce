@@ -16,8 +16,8 @@ assets/           → fotos e monograma (veja assets/LEIA-ME.md)
 
 Capa animada de álbum · Hero com monograma · Música (YouTube) · Versículo ·
 Nosso convite · Linha do tempo do dia · Informações · Como chegar (com mapas) ·
-Dress code e paleta · Contagem regressiva · Lista de presentes + Pix ·
-Manual do convidado · Confirmação de presença por WhatsApp
+Dress code e cores reservadas · Contagem regressiva · Lista de presentes + Pix ·
+Confirmação de presença por WhatsApp
 
 ## Como editar as informações
 
@@ -48,8 +48,8 @@ var GUEST_LIST = ["Maria Clara", "João Pedro", "Ana"];
 
 ### Fotos
 
-Monograma, foto do casal e foto da cerimônia já estão no ar. Falta apenas a
-**foto da recepção** (`assets/recepcao.jpg`) — é só colocar o arquivo na pasta
+Monograma, foto do casal e foto da recepção já estão no ar. Falta apenas a
+**foto da cerimônia** (`assets/cerimonia.jpg`) — é só colocar o arquivo na pasta
 `assets/` com esse nome que ela aparece sozinha.
 
 Detalhes em `assets/LEIA-ME.md`.

@@ -369,10 +369,21 @@ section { padding: 80px 24px; max-width: 600px; margin: 0 auto; text-align: cent
   font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px;
   color: var(--text-light); text-transform: uppercase; margin-top: 24px; display: block; line-height: 1.7;
 }
-.palette-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; }
-.palette-dot { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(61,122,97,0.25); }
+.palette-row {
+  display: flex; align-items: flex-start; justify-content: center;
+  gap: clamp(14px, 5vw, 30px); margin-top: 14px;
+}
+.palette-item { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+.palette-dot {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(61,122,97,0.3); box-shadow: 0 2px 6px rgba(61,122,97,0.12);
+}
+.palette-name {
+  font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-light); white-space: nowrap;
+}
 .palette-cap {
-  display: block; margin-top: 10px; font-family: 'Cinzel', serif; font-size: 9px;
+  display: block; margin-top: 26px; font-family: 'Cinzel', serif; font-size: 9px;
   letter-spacing: 3px; text-transform: uppercase; color: var(--musgo-dark);
 }
 
@@ -450,36 +461,6 @@ section { padding: 80px 24px; max-width: 600px; margin: 0 auto; text-align: cent
   border-bottom: 1px solid var(--pistache); padding-bottom: 2px; transition: color 0.3s ease;
 }
 .gift-contact-link:hover { color: var(--musgo-dark); }
-
-/* AVISOS */
-.avisos-list {
-  display: flex; flex-direction: column; gap: 0;
-  border: 1.5px solid var(--pistache); background: white;
-}
-.aviso-item {
-  display: flex; align-items: flex-start; gap: 20px;
-  padding: 24px 28px; border-bottom: 1px solid rgba(124,180,154,0.22);
-  transition: background 0.2s;
-}
-.aviso-item:last-child { border-bottom: none; }
-.aviso-item:hover { background: rgba(243,248,245,0.7); }
-.aviso-icon {
-  width: 48px; height: 48px; flex-shrink: 0;
-  border: 1.5px solid var(--pistache); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--cream);
-}
-.aviso-text { display: flex; flex-direction: column; gap: 4px; text-align: left; }
-.aviso-title {
-  font-family: 'Cinzel', serif; font-size: 11px;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--musgo-dark); font-weight: 500;
-}
-.aviso-desc {
-  font-family: 'Cormorant Garamond', serif; font-size: 17px;
-  font-style: italic; color: var(--text-mid); line-height: 1.6;
-}
-.aviso-desc strong { font-style: normal; font-weight: 600; color: var(--text); }
 
 /* RSVP */
 .rsvp-section { padding-bottom: 100px; }
@@ -616,7 +597,6 @@ footer .footer-blessing {
   .dress-grid { gap: 20px; }
   .countdown-grid { gap: 8px; }
   .countdown-num { font-size: 30px; }
-  .aviso-item { padding: 18px 16px; gap: 14px; }
   .music-widget { bottom: 16px; right: 16px; padding: 8px 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -912,7 +892,7 @@ function monoFallback(img) {
         <span class="map-card-name">Igreja Evangélica Assembleia de Deus</span>
         <p class="map-card-addr">R. Nazaré Pedro, 580 — Jardim Princesa<br>Pontal — SP, 14180-000</p>
         <div class="local-photo" id="foto-cerimonia">
-          <img src="assets/cerimonia.jpg" alt="Espaço Shalon — local da cerimônia" onerror="hidePhoto(this,'foto-cerimonia')">
+          <img src="assets/cerimonia.jpg" alt="Local da cerimônia" onerror="hidePhoto(this,'foto-cerimonia')">
           <span class="local-photo-cap">Local da cerimônia</span>
         </div>
         <a class="map-btn" target="_blank" rel="noopener"
@@ -926,7 +906,7 @@ function monoFallback(img) {
         <span class="map-card-name">Espaço Shalon</span>
         <p class="map-card-addr">Rua Marginal Agnaldo José Mário, 120 — Bairro Antonina Genari<br>Em frente ao Domingos Moro — Pontal/SP</p>
         <div class="local-photo" id="foto-recepcao">
-          <img src="assets/recepcao.jpg" alt="Local da recepção" onerror="hidePhoto(this,'foto-recepcao')">
+          <img src="assets/recepcao.jpg" alt="Espaço Shalon — local da recepção" onerror="hidePhoto(this,'foto-recepcao')">
           <span class="local-photo-cap">Local da recepção</span>
         </div>
         <a class="map-btn" target="_blank" rel="noopener"
@@ -962,15 +942,24 @@ function monoFallback(img) {
           <span class="dress-item-desc">Social Fino</span>
         </div>
       </div>
-      <div class="palette-row" aria-hidden="true">
-        <span class="palette-dot" style="background:#d6ecdf"></span>
-        <span class="palette-dot" style="background:#a8d5c0"></span>
-        <span class="palette-dot" style="background:#7cb49a"></span>
-        <span class="palette-dot" style="background:#3d7a61"></span>
+      <span class="palette-cap">Cores reservadas — por favor, evite</span>
+      <div class="palette-row">
+        <div class="palette-item">
+          <span class="palette-dot" style="background:#ffffff"></span>
+          <span class="palette-name">Branco</span>
+        </div>
+        <div class="palette-item">
+          <span class="palette-dot" style="background:#a8d5c0"></span>
+          <span class="palette-name">Verde menta</span>
+        </div>
+        <div class="palette-item">
+          <span class="palette-dot" style="background:#c1694f"></span>
+          <span class="palette-name">Terracota</span>
+        </div>
       </div>
-      <span class="palette-cap">Nossa paleta · Verde Menta</span>
       <span class="dress-note">
-        Por favor, evite o branco — reservado à noiva
+        O branco é reservado à noiva;<br>
+        verde menta e terracota são as cores da nossa decoração
       </span>
     </div>
   </section>
@@ -1014,94 +1003,6 @@ function monoFallback(img) {
       </div>
 
       <a href="#" id="gift-contact" target="_blank" rel="noopener" class="gift-contact-link">Falar com os noivos</a>
-    </div>
-  </section>
-
-  <!-- MANUAL DO CONVIDADO -->
-  <section style="padding-top: 0;">
-    <span class="section-label reveal">Manual do Convidado</span>
-    <div class="avisos-list reveal">
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M8 2 Q12 6 16 2 L18 8 L15 8 L15 22 L9 22 L9 8 L6 8 Z"/>
-            <path d="M9 8 Q12 11 15 8"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Traje Social Fino</span>
-          <span class="aviso-desc">Capriche no look! Por favor, evite a cor <strong>branca</strong>, reservada à noiva.</span>
-        </div>
-      </div>
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Seja Pontual</span>
-          <span class="aviso-desc">Planeje-se para chegar com antecedência. A cerimônia inicia às <strong>18h em ponto</strong>.</span>
-        </div>
-      </div>
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Convite Intransferível</span>
-          <span class="aviso-desc">Este convite é pessoal e intransferível. Convidado não convida.</span>
-        </div>
-      </div>
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="7" y="2" width="10" height="20" rx="2"/>
-            <path d="M10 8 Q12 6 14 8"/>
-            <path d="M9 11 Q12 8 15 11"/>
-            <line x1="5" y1="5" x2="19" y2="19"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Celular no Silencioso</span>
-          <span class="aviso-desc">Durante a cerimônia, mantenha seu celular no <strong>modo silencioso</strong>.</span>
-        </div>
-      </div>
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-            <circle cx="12" cy="13" r="4"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Momento sem Celular</span>
-          <span class="aviso-desc">Durante a entrada da noiva, guarde o celular e viva esse instante com a gente. Depois, fotografe à vontade!</span>
-        </div>
-      </div>
-
-      <div class="aviso-item">
-        <div class="aviso-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-            <circle cx="12" cy="9" r="2.5"/>
-          </svg>
-        </div>
-        <div class="aviso-text">
-          <span class="aviso-title">Da Igreja à Recepção</span>
-          <span class="aviso-desc">A recepção acontece logo após a cerimônia, no <strong>Espaço Shalon</strong>. Use os botões "Abrir no mapa" para traçar a rota.</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
