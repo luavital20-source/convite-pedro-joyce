@@ -493,6 +493,27 @@ section { padding: 80px 24px; max-width: 600px; margin: 0 auto; text-align: cent
   margin-bottom: 28px; font-weight: 400;
 }
 .rsvp-input-wrap { display: flex; gap: 0; margin-bottom: 12px; }
+.rsvp-name-full {
+  width: 100%; border-right: 1.5px solid var(--pistache) !important;
+  text-align: center; margin-bottom: 16px;
+}
+.btn-whatsapp-full {
+  display: flex; width: 100%; justify-content: center;
+  padding: 17px 24px; font-size: 12px; margin-top: 0;
+}
+.rsvp-number {
+  display: inline-block; margin-top: 18px;
+  font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px;
+  color: var(--musgo-dark); text-decoration: none;
+  border-bottom: 1px solid var(--pistache); padding-bottom: 3px;
+}
+.rsvp-number:hover { color: var(--text); }
+.rsvp-link-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
+  color: var(--musgo-dark); text-transform: uppercase;
+  border-bottom: 1px solid var(--pistache); padding: 0 0 2px;
+}
 .rsvp-name-input {
   flex: 1; min-width: 0; border: 1.5px solid var(--pistache); border-right: none;
   padding: 14px 18px; font-family: 'Cormorant Garamond', serif;
@@ -510,7 +531,7 @@ section { padding: 80px 24px; max-width: 600px; margin: 0 auto; text-align: cent
 .rsvp-hint {
   font-family: 'Cinzel', serif; font-size: 9px;
   letter-spacing: 2px; color: var(--text-light);
-  text-transform: uppercase; line-height: 1.6;
+  text-transform: uppercase; line-height: 1.6; margin-top: 18px;
 }
 .rsvp-result { display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .rsvp-result-icon {
@@ -1013,41 +1034,47 @@ function monoFallback(img) {
     <div class="rsvp-card reveal" id="rsvp-step-input">
       <p class="rsvp-intro">
         Sua presença é fundamental para nós.<br>
-        Digite seu nome (ou apelido) para confirmar.
+        Digite seu nome e toque no botão para confirmar.
       </p>
-      <div class="rsvp-input-wrap">
-        <input
-          type="text"
-          id="rsvp-name-input"
-          class="rsvp-name-input"
-          placeholder="Seu nome"
-          autocomplete="off"
-          aria-label="Seu nome"
-          onkeydown="if(event.key==='Enter') checkGuest()"
-        >
-        <button class="btn-primary rsvp-submit-btn" onclick="checkGuest()">
-          Confirmar
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-      <p class="rsvp-hint">Confirme com carinho para ajudar os noivos na organização.</p>
+      <input
+        type="text"
+        id="rsvp-name-input"
+        class="rsvp-name-input rsvp-name-full"
+        placeholder="Seu nome"
+        autocomplete="name"
+        aria-label="Seu nome"
+        oninput="atualizarLinkWhatsApp()"
+        onkeydown="if(event.key==='Enter'){ event.preventDefault(); document.getElementById('rsvp-wa-main').click(); }"
+      >
+      <a id="rsvp-wa-main" class="btn-whatsapp btn-whatsapp-full" href="#" target="_blank" rel="noopener"
+         onclick="return confirmarPresenca(event)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Confirmar pelo WhatsApp
+      </a>
+      <p class="rsvp-hint">
+        Abrimos a conversa com a mensagem pronta —<br>é só tocar em enviar.
+      </p>
+      <a class="rsvp-number" id="rsvp-number" href="#" target="_blank" rel="noopener">(16) 98823-2073</a>
     </div>
 
-    <!-- ESTADO: CONFIRMADO -->
+    <!-- ESTADO: WHATSAPP ABERTO -->
     <div class="rsvp-card rsvp-result" id="rsvp-step-confirmed" style="display:none;">
       <div class="rsvp-result-icon rsvp-confirmed-icon">
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
       </div>
-      <h3 class="rsvp-result-title rsvp-confirmed-title">Presença Confirmada!</h3>
+      <h3 class="rsvp-result-title rsvp-confirmed-title">Só falta enviar!</h3>
       <p class="rsvp-result-msg" id="rsvp-confirmed-msg"></p>
       <a id="rsvp-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        Avisar os Noivos pelo WhatsApp
+        Abrir o WhatsApp de novo
       </a>
+      <button class="rsvp-contact-link rsvp-link-btn" onclick="resetRSVP()">Confirmar outro nome</button>
     </div>
 
     <!-- ESTADO: NÃO ENCONTRADO (só usado se a lista de convidados for preenchida) -->
@@ -1070,7 +1097,7 @@ function monoFallback(img) {
   </section>
 
   <footer>
-    <span class="footer-names">Pedro Henrique &amp; Joyce Kelly</span>
+    <span class="footer-names">Pedro Henrique<br>&amp; Joyce Kelly</span>
     <span class="footer-date" id="footer-date">Pontal · SP</span>
     <p class="footer-blessing">Com a bênção de Deus, para sempre.</p>
   </footer>
@@ -1089,8 +1116,9 @@ var DATA_CURTA   = '28 · Novembro · 2026';     // (mostrada na capa e no rodap
 // Nomes dos noivos (usados nas mensagens de WhatsApp)
 var NOIVOS = 'Pedro Henrique e Joyce Kelly';
 
-// WhatsApp para confirmação de presença (apenas números, com DDI 55 e DDD).
-var WHATSAPP_NUM = '5516988232073';
+// WhatsApp para confirmação de presença.
+var WHATSAPP_NUM    = '5516988232073';      // só números, com DDI 55 e DDD
+var WHATSAPP_EXIBE  = '(16) 98823-2073';    // como aparece escrito no convite
 
 // Chave Pix (celular da noiva)
 var PIX_TIPO  = 'Celular';
@@ -1151,6 +1179,14 @@ var GUEST_LIST = [];
     giftContact.href = 'https://wa.me/' + WHATSAPP_NUM +
       '?text=' + encodeURIComponent('Olá, ' + NOIVOS + '! Gostaria de falar sobre a lista de presentes. 💚');
   }
+  // Botão principal de confirmação + número clicável
+  atualizarLinkWhatsApp();
+  var num = document.getElementById('rsvp-number');
+  if (num) {
+    num.href = linkWhatsApp('');
+    num.textContent = WHATSAPP_EXIBE;
+  }
+
   // Link de contato no estado "não encontrado"
   var rejWa = document.getElementById('rsvp-reject-wa');
   if (rejWa) {
@@ -1192,45 +1228,76 @@ function normalize(str) {
     .trim();
 }
 
-function checkGuest() {
-  var input = document.getElementById('rsvp-name-input');
-  var name  = input.value.trim();
+function nomeFormatado() {
+  var nome = document.getElementById('rsvp-name-input').value.trim();
+  if (!nome) return '';
+  return nome.split(' ').map(function (w) {
+    return w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w;
+  }).join(' ');
+}
 
-  if (!name) {
+function linkWhatsApp(nome) {
+  var dataFrase = DATA_EXTENSO ? (' no dia ' + DATA_EXTENSO) : '';
+  var quem = nome ? ('Eu, *' + nome + '*, confirmo') : 'Confirmo';
+  var texto =
+    'Olá, ' + NOIVOS + '! 💚\n\n' + quem +
+    ' minha presença no casamento de vocês' + dataFrase +
+    '!\n\nEstou muito feliz para celebrar esse momento especial com vocês! 🎉';
+  return 'https://wa.me/' + WHATSAPP_NUM + '?text=' + encodeURIComponent(texto);
+}
+
+// mantém o href do botão sempre pronto: o toque no celular abre direto,
+// sem depender de popup aberto por script
+function atualizarLinkWhatsApp() {
+  var btn = document.getElementById('rsvp-wa-main');
+  if (btn) btn.href = linkWhatsApp(nomeFormatado());
+}
+
+function confirmarPresenca(ev) {
+  var input = document.getElementById('rsvp-name-input');
+  var nome = nomeFormatado();
+
+  if (!nome) {
+    ev.preventDefault();
     input.classList.add('error');
     input.placeholder = 'Digite seu nome';
-    setTimeout(function () { input.classList.remove('error'); input.placeholder = 'Seu nome'; }, 2000);
-    return;
+    input.focus();
+    setTimeout(function () {
+      input.classList.remove('error');
+      input.placeholder = 'Seu nome';
+    }, 2000);
+    return false;
   }
 
-  var normInput = normalize(name);
-  // Lista vazia => aceita qualquer nome. Lista preenchida => valida o nome digitado.
+  // Lista vazia => aceita qualquer nome. Lista preenchida => valida o digitado.
+  var norm = normalize(nome);
   var found = GUEST_LIST.length === 0 || GUEST_LIST.some(function (g) {
     var ng = normalize(g);
-    // confere o nome completo OU apenas o primeiro nome de um convidado da lista
-    return ng === normInput || ng.split(' ')[0] === normInput;
+    return ng === norm || ng.split(' ')[0] === norm;
   });
 
-  document.getElementById('rsvp-step-input').style.display = 'none';
-
-  if (found) {
-    var fullNameCap = name.split(' ').map(function (w) {
-      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
-    }).join(' ');
-
-    document.getElementById('rsvp-confirmed-msg').innerHTML =
-      'Que alegria, <strong>' + fullNameCap + '</strong>!<br>Sua presença foi confirmada. Mal podemos esperar para celebrar com você! 💚';
-
-    var dataFrase = DATA_EXTENSO ? (' no dia ' + DATA_EXTENSO) : '';
-    var waText = encodeURIComponent(
-      'Olá, ' + NOIVOS + '! 💚\n\nEu, *' + fullNameCap + '*, confirmo minha presença no casamento de vocês' + dataFrase + '!\n\nEstou muito feliz para celebrar esse momento especial com vocês! 🎉'
-    );
-    document.getElementById('rsvp-whatsapp-btn').href = 'https://wa.me/' + WHATSAPP_NUM + '?text=' + waText;
-
-    document.getElementById('rsvp-step-confirmed').style.display = 'flex';
-  } else {
+  if (!found) {
+    ev.preventDefault();
+    document.getElementById('rsvp-step-input').style.display = 'none';
     document.getElementById('rsvp-step-rejected').style.display = 'flex';
+    return false;
   }
+
+  var url = linkWhatsApp(nome);
+  ev.currentTarget.href = url;
+  document.getElementById('rsvp-whatsapp-btn').href = url;
+  document.getElementById('rsvp-confirmed-msg').innerHTML =
+    'Obrigado, <strong>' + nome + '</strong>!<br>' +
+    'Abrimos o WhatsApp dos noivos com a sua mensagem pronta. ' +
+    'Toque em <strong>enviar</strong> para que a confirmação chegue até eles. 💚';
+
+  // troca de tela depois que o WhatsApp abriu
+  setTimeout(function () {
+    document.getElementById('rsvp-step-input').style.display = 'none';
+    document.getElementById('rsvp-step-confirmed').style.display = 'flex';
+  }, 400);
+
+  return true;   // segue para o WhatsApp
 }
 
 function resetRSVP() {
@@ -1238,6 +1305,7 @@ function resetRSVP() {
   document.getElementById('rsvp-step-rejected').style.display = 'none';
   document.getElementById('rsvp-step-confirmed').style.display = 'none';
   document.getElementById('rsvp-step-input').style.display = 'block';
+  atualizarLinkWhatsApp();
 }
 
 /* ── TRILHA SONORA (YouTube, sem vídeo à vista) ─────────────────────── */

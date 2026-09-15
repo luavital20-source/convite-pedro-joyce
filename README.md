@@ -30,10 +30,21 @@ no início do `<script>` no fim do `index.html`:
 | `DATA_EXTENSO`, `DATA_CURTA` | como a data aparece escrita |
 | `NOIVOS` | nomes usados nas mensagens de WhatsApp |
 | `WHATSAPP_NUM` | número que recebe as confirmações (só números, com 55 + DDD) |
+| `WHATSAPP_EXIBE` | esse mesmo número, como aparece escrito no convite |
 | `PIX_TIPO`, `PIX_KEY`, `PIX_COPIA`, `PIX_NOME` | dados do Pix |
 | `LINK_PRESENTES` | link da lista de presentes |
 | `MUSICA_YT_ID`, `MUSICA_TITULO` | música do convite (ID do vídeo no YouTube) |
 | `GUEST_LIST` | lista de convidados (veja abaixo) |
+
+### Confirmação de presença
+
+O convidado digita o nome e toca em **Confirmar pelo WhatsApp**. Isso abre a
+conversa com `WHATSAPP_NUM` com a mensagem já escrita — ele só precisa tocar em
+enviar. O número também aparece clicável logo abaixo do botão.
+
+A tela seguinte diz "Só falta enviar!" de propósito: o convite não tem como
+saber se a mensagem foi enviada, então ele não afirma que a presença está
+confirmada — quem confirma é a mensagem chegando no WhatsApp de vocês.
 
 ### Lista de convidados (RSVP)
 
