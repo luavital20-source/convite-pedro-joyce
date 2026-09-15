@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Henrique &amp; Joyce Kelly — Casamento</title>
+<meta name="description" content="Convite de casamento de Pedro Henrique e Joyce Kelly — 28 de novembro de 2026, Pontal/SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* PALETA: VERDE MENTA + marfim suave */
+  --cream: #f3f8f5;         /* fundo marfim esverdeado */
+  --warm-white: #e8f2ec;    /* menta muito claro */
+  --musgo: #7cb49a;         /* verde menta (accent principal) */
+  --pistache: #a8d5c0;      /* menta claro (bordas) */
+  --pistache-soft: #d6ecdf; /* menta pálido */
+  --musgo-dark: #3d7a61;    /* verde profundo */
+  --text: #22322b;
+  --text-mid: #4b6157;
+  --text-light: #86998f;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════
+   SPLASH — CAPA DURA DE ÁLBUM
+══════════════════════════════════ */
+#splash {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #e8f2ec;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; perspective: 2200px;
+  transition: opacity 0.8s ease;
+}
+#splash::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 18px, rgba(61,122,97,0.05) 18px 19px),
+    radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(61,122,97,0.16) 100%);
+  pointer-events: none;
+}
+
+.album {
+  position: relative;
+  width: min(330px, 80vw);
+  height: min(440px, 90vh);
+  transform-style: preserve-3d;
+}
+.album-pages {
+  position: absolute; inset: 0;
+  background: #f7fbf8; border-radius: 4px 8px 8px 4px;
+  box-shadow:
+    1px 1px 0 #eff7f2, 3px 2px 0 #e7f2ec, 5px 3px 0 #ddece3,
+    7px 4px 0 #d3e6da, 9px 5px 0 #c9e0d1,
+    16px 14px 40px rgba(50,100,79,0.32);
+  overflow: hidden;
+}
+.album-inner-page {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; padding: 36px 24px; text-align: center;
+  opacity: 0; transition: opacity 0.6s ease 0.7s;
+}
+#splash.opening .album-inner-page { opacity: 1; }
+.inner-script { font-family: 'Great Vibes', cursive; font-size: 34px; color: var(--musgo-dark); line-height: 1.15; }
+.inner-sub { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); }
+
+.album-cover {
+  position: absolute; inset: 0;
+  transform-origin: left center; transform: rotateY(0deg);
+  transition: transform 1.5s cubic-bezier(0.62,0.04,0.3,1), box-shadow 1.5s ease;
+  transform-style: preserve-3d; cursor: pointer; will-change: transform;
+  border-radius: 4px 10px 10px 4px;
+  background: linear-gradient(125deg, #f6fbf8 0%, #e9f4ee 45%, #dcebe2 100%);
+  box-shadow: 0 0 0 1px rgba(124,180,154,0.45) inset, 18px 16px 44px rgba(50,100,79,0.38);
+  backface-visibility: hidden;
+}
+#splash.opening .album-cover {
+  transform: rotateY(-168deg);
+  box-shadow: -18px 16px 50px rgba(50,100,79,0.42);
+}
+.album-spine {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 16px;
+  background: linear-gradient(to right, #3d7a61, #7cb49a 60%, #4e8a70);
+  border-radius: 4px 0 0 4px; box-shadow: inset -2px 0 4px rgba(0,0,0,0.22);
+}
+.album-spine::after {
+  content: ''; position: absolute; top: 8px; bottom: 8px; left: 6px; width: 1px; background: rgba(255,255,255,0.3);
+}
+.cover-inner {
+  position: absolute; inset: 14px 14px 14px 26px;
+  border: 1.5px solid var(--musgo); border-radius: 2px 6px 6px 2px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 20px 16px; text-align: center;
+}
+.cover-inner::before {
+  content: ''; position: absolute; inset: 5px;
+  border: 1px solid rgba(124,180,154,0.4); pointer-events: none; border-radius: 2px 5px 5px 2px;
+}
+.cover-oval-frame {
+  position: relative; width: min(170px, 48vw); height: min(200px, 56vw);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; animation: splashFadeIn 1.4s ease forwards 0.4s;
+}
+.cover-names { font-family: 'Great Vibes', cursive; font-size: clamp(26px, 7vw, 34px); color: var(--text); line-height: 1.15; margin: 10px 0 4px; }
+.cover-divider { width: 40px; height: 1px; background: var(--pistache); margin: 8px 0; }
+.cover-date { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--musgo-dark); }
+.cover-tap { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); font-style: italic; margin-top: 12px; animation: tapPulse 2.2s ease-in-out infinite; }
+@keyframes splashFadeIn { from { opacity:0; transform: translateY(14px);} to {opacity:1; transform: translateY(0);} }
+@keyframes tapPulse { 0%,100%{opacity:0.5;} 50%{opacity:1;} }
+@keyframes bounceDown { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+#main { display: none; min-height: 100vh; }
+
+.hero {
+  min-height: 100vh; background: #FFFFFF;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 40px 24px 80px; position: relative; overflow: visible;
+}
+.hero-layout {
+  width: 100%; max-width: 600px; position: relative;
+  display: flex; flex-direction: column; align-items: center;
+  --hero-corn-w: clamp(72px, 22vw, 100px);
+  --hero-border-y: calc(var(--hero-corn-w) * 32 / 108);
+  --hero-vline-x: calc(var(--hero-corn-w) * 10 / 108);
+}
+.hero-vline {
+  position: absolute; top: var(--hero-border-y);
+  width: 1px; background: var(--pistache);
+  height: min(400px, 52vh); z-index: 1; pointer-events: none;
+}
+.hero-vline-left { left: var(--hero-vline-x); }
+.hero-vline-right { right: var(--hero-vline-x); }
+.hero-frame {
+  width: 100%; position: relative;
+  margin-bottom: 4px; overflow: visible;
+  min-height: calc(var(--hero-border-y) + clamp(30px, 7vw, 40px) / 2 + 2px);
+}
+.hero-corn {
+  position: absolute; top: 0; width: var(--hero-corn-w); height: auto;
+  z-index: 2; pointer-events: none;
+}
+.hero-corn-left { left: 0; }
+.hero-corn-right { right: 0; transform: scaleX(-1); }
+.hero-monogram-row {
+  display: flex; align-items: center; justify-content: center; gap: 0;
+  margin: 0 var(--hero-corn-w);
+  padding-top: max(0px, calc(var(--hero-border-y) - clamp(30px, 7vw, 40px) / 2));
+  position: relative; z-index: 3;
+}
+.hero-line-left, .hero-line-right {
+  flex: 1; height: 1px; background: var(--pistache);
+}
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(15px, 3.5vw, 18px);
+  font-weight: 400; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--text-mid); line-height: 1.6; text-align: center;
+  margin: 22px auto 26px;
+}
+.hero-names {
+  font-family: 'Great Vibes', cursive; font-size: clamp(40px, 9.5vw, 64px);
+  color: var(--text); line-height: 1.1; text-align: center; margin: 8px 0 20px;
+}
+.hero-invite-text {
+  font-family: 'Cinzel', Georgia, serif; font-size: clamp(11px, 2.5vw, 13px);
+  letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); text-align: center; line-height: 1.6; margin-bottom: 28px;
+}
+.hero-scroll { display: flex; flex-direction: column; align-items: center; gap: 8px; animation: bounceDown 2s ease-in-out infinite; }
+.hero-scroll span { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); }
+.scroll-arrow { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--musgo), transparent); }
+
+/* ══════════════════════════════════
+   MÚSICA (barra)
+══════════════════════════════════ */
+.music-section {
+  background: var(--musgo-dark); padding: 28px 24px;
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+}
+.music-label {
+  font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.8);
+}
+.music-player { display: flex; align-items: center; gap: 12px; }
+.music-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: white; }
+.play-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.2); border: 1.5px solid rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+}
+.play-btn:hover { background: rgba(255,255,255,0.35); }
+.play-btn svg { margin-left: 2px; }
+.music-yt-link {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.35); padding-bottom: 2px;
+}
+.music-yt-link:hover { color: #fff; }
+/* player do YouTube fica fora da tela, só o áudio importa */
+#ytPlayerHost { position: fixed; width: 1px; height: 1px; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; }
+
+/* ══════════════════════════════════
+   SECTIONS
+══════════════════════════════════ */
+section { padding: 80px 24px; max-width: 600px; margin: 0 auto; text-align: center; }
+
+.section-label {
+  font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--musgo-dark);
+  margin-bottom: 32px; display: block; font-weight: 500;
+}
+
+/* MESSAGE BOX (versículo) */
+.message-box {
+  border-top: 1.5px solid var(--pistache); border-bottom: 1.5px solid var(--pistache);
+  padding: 40px 24px; margin-top: 16px; position: relative;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.message-box.visible { opacity: 1; transform: translateY(0); }
+.message-box::before, .message-box::after {
+  content: "❦"; position: absolute; font-size: 20px; color: var(--musgo);
+}
+.message-box::before { top: -12px; left: 50%; transform: translateX(-50%); background: var(--cream); padding: 0 8px; }
+.message-box::after { bottom: -12px; left: 50%; transform: translateX(-50%); background: var(--cream); padding: 0 8px; }
+.message-text {
+  font-family: 'Cormorant Garamond', serif; font-size: 21px;
+  font-style: italic; color: var(--text-mid); line-height: 1.8; font-weight: 400;
+}
+.message-ref {
+  display: block; margin-top: 16px; font-family: 'Cinzel', serif;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  font-style: normal; color: var(--musgo-dark);
+}
+
+/* TEXTO CONVITE */
+.story-text {
+  font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  color: var(--text-mid); line-height: 1.85; text-align: center;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.story-text.visible { opacity: 1; transform: translateY(0); }
+.story-text p { margin-bottom: 18px; }
+.story-text p:last-child { margin-bottom: 0; }
+.story-text strong { font-weight: 600; color: var(--musgo-dark); font-style: italic; }
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+.timeline-item {
+  display: grid; grid-template-columns: 1fr 44px 1fr;
+  align-items: start; gap: 16px; padding: 20px 0;
+  position: relative; opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+.timeline-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 50%; top: 54px;
+  width: 1px; height: calc(100% - 24px);
+  background: linear-gradient(to bottom, var(--pistache), transparent);
+  transform: translateX(-50%);
+}
+.timeline-dot {
+  width: 44px; height: 44px; background: white;
+  border: 1.5px solid var(--pistache); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; box-shadow: 0 2px 8px rgba(61,122,97,0.15);
+}
+.timeline-left { text-align: right; padding-top: 8px; }
+.timeline-right { text-align: left; padding-top: 8px; }
+.timeline-time {
+  font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: 2px; color: var(--musgo-dark); display: block; margin-bottom: 4px; font-weight: 500;
+}
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px;
+  font-style: italic; color: var(--text); display: block; font-weight: 500;
+}
+.timeline-sub { font-size: 13px; color: var(--text-light); display: block; margin-top: 3px; line-height: 1.5; }
+
+/* INFO CARDS */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.info-card {
+  border: 1.5px solid var(--pistache); padding: 24px 16px;
+  background: white; position: relative;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.info-card.visible { opacity: 1; transform: translateY(0); }
+.info-card::before {
+  content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(124,180,154,0.28); pointer-events: none;
+}
+.info-card-icon { display: block; margin: 0 auto 10px; }
+.info-card-label {
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--musgo-dark);
+  display: block; margin-bottom: 6px; font-weight: 500;
+}
+.info-card-value {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px;
+  color: var(--text); font-style: italic; font-weight: 500; line-height: 1.4;
+}
+
+/* LOCALIZAÇÃO / MAPAS */
+.maps-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.map-card {
+  border: 1.5px solid var(--pistache); background: white;
+  padding: 28px 24px; text-align: center; position: relative;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.map-card.visible { opacity: 1; transform: translateY(0); }
+.map-card-tag {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--musgo-dark); font-weight: 500; display: block; margin-bottom: 8px;
+}
+.map-card-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 22px;
+  font-style: italic; color: var(--text); display: block; margin-bottom: 6px;
+}
+.map-card-addr { font-size: 15px; color: var(--text-light); line-height: 1.5; margin-bottom: 18px; }
+.map-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px;
+  border: 1.5px solid var(--musgo); background: transparent;
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--musgo-dark); text-decoration: none;
+  transition: all 0.3s ease;
+}
+.map-btn:hover { background: var(--musgo-dark); color: white; }
+
+/* FOTO DO LOCAL (dentro do card de mapa) */
+.local-photo {
+  margin: 0 0 18px; padding: 8px; background: #fff;
+  border: 1px solid var(--pistache);
+  box-shadow: 0 8px 22px rgba(61,122,97,0.14);
+}
+.local-photo img { width: 100%; display: block; }
+.local-photo-cap {
+  display: block; margin-top: 8px; font-family: 'Cinzel', serif;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light);
+}
+
+/* DRESS CODE */
+.dress-section { background: white; border: 1.5px solid var(--pistache); padding: 40px 24px; margin-top: 16px; }
+.dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+.dress-item { text-align: center; }
+.dress-item svg { display: block; margin: 0 auto 12px; }
+.dress-item-label {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--musgo-dark); font-weight: 500; display: block; margin-bottom: 6px;
+}
+.dress-item-desc { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: var(--text-mid); }
+.dress-note {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px;
+  color: var(--text-light); text-transform: uppercase; margin-top: 24px; display: block; line-height: 1.7;
+}
+.palette-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; }
+.palette-dot { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(61,122,97,0.25); }
+.palette-cap {
+  display: block; margin-top: 10px; font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--musgo-dark);
+}
+
+/* COUNTDOWN */
+.countdown-wrap {
+  margin-top: 8px; opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.countdown-wrap.visible { opacity: 1; transform: translateY(0); }
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.countdown-box { background: white; border: 1.5px solid var(--pistache); padding: 20px 8px 14px; }
+.countdown-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 40px;
+  font-weight: 400; color: var(--text); line-height: 1; display: block;
+}
+.countdown-label {
+  font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 2px;
+  color: var(--musgo-dark); text-transform: uppercase; display: block; margin-top: 6px; font-weight: 500;
+}
+
+/* GIFT BOX */
+.gift-box {
+  border: 1.5px solid var(--pistache); padding: 40px 24px;
+  background: white; position: relative; margin-top: 16px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.gift-box.visible { opacity: 1; transform: translateY(0); }
+.gift-box::before {
+  content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(124,180,154,0.22); pointer-events: none;
+}
+.gift-text {
+  font-family: 'Cormorant Garamond', serif; font-size: 19px;
+  font-style: italic; color: var(--text-mid); line-height: 1.7; margin: 16px 0;
+}
+.gift-btn {
+  display: inline-block; margin-top: 20px; padding: 12px 32px;
+  border: 1.5px solid var(--musgo); background: transparent;
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--musgo-dark); text-decoration: none;
+  transition: all 0.3s ease; cursor: pointer;
+}
+.gift-btn:hover { background: var(--musgo-dark); color: white; }
+.gift-or {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 260px; margin: 28px auto 22px;
+}
+.gift-or::before, .gift-or::after { content: ''; flex: 1; height: 1px; background: var(--pistache); }
+.gift-or span {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-light); white-space: nowrap;
+}
+.gift-pix {
+  border: 1px solid var(--pistache); background: var(--cream);
+  padding: 20px 22px; max-width: 340px; margin: 0 auto; text-align: center;
+}
+.gift-pix-type {
+  display: block; font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px;
+}
+.gift-pix-key {
+  display: block; font-family: 'Cinzel', serif; font-size: clamp(16px, 5vw, 19px);
+  letter-spacing: 1px; color: var(--musgo-dark); font-weight: 600; word-break: break-word;
+}
+.gift-pix-name {
+  display: block; margin-top: 8px; font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-style: italic; color: var(--text-mid);
+}
+.gift-pix-copy { margin-top: 18px; }
+.gift-contact-link {
+  display: inline-block; margin-top: 24px;
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-light); text-decoration: none;
+  border-bottom: 1px solid var(--pistache); padding-bottom: 2px; transition: color 0.3s ease;
+}
+.gift-contact-link:hover { color: var(--musgo-dark); }
+
+/* AVISOS */
+.avisos-list {
+  display: flex; flex-direction: column; gap: 0;
+  border: 1.5px solid var(--pistache); background: white;
+}
+.aviso-item {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 24px 28px; border-bottom: 1px solid rgba(124,180,154,0.22);
+  transition: background 0.2s;
+}
+.aviso-item:last-child { border-bottom: none; }
+.aviso-item:hover { background: rgba(243,248,245,0.7); }
+.aviso-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  border: 1.5px solid var(--pistache); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cream);
+}
+.aviso-text { display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.aviso-title {
+  font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--musgo-dark); font-weight: 500;
+}
+.aviso-desc {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px;
+  font-style: italic; color: var(--text-mid); line-height: 1.6;
+}
+.aviso-desc strong { font-style: normal; font-weight: 600; color: var(--text); }
+
+/* RSVP */
+.rsvp-section { padding-bottom: 100px; }
+.btn-primary {
+  background: var(--musgo-dark); color: white; border: none;
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; padding: 14px 36px; cursor: pointer;
+  transition: all 0.3s ease; font-weight: 500;
+}
+.btn-primary:hover { background: var(--text); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+.btn-secondary {
+  background: transparent; color: var(--musgo-dark); border: 1.5px solid var(--musgo);
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; padding: 14px 36px; cursor: pointer;
+  transition: all 0.3s ease; font-weight: 500;
+}
+.btn-secondary:hover { border-color: var(--text); color: var(--text); }
+
+.rsvp-card {
+  background: white; border: 1.5px solid var(--pistache);
+  padding: 40px 32px; position: relative; text-align: center;
+}
+.rsvp-card::before {
+  content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
+  border: 1px solid rgba(124,180,154,0.22); pointer-events: none;
+}
+.rsvp-intro {
+  font-family: 'Cormorant Garamond', serif; font-size: 19px;
+  font-style: italic; color: var(--text-mid); line-height: 1.7;
+  margin-bottom: 28px; font-weight: 400;
+}
+.rsvp-input-wrap { display: flex; gap: 0; margin-bottom: 12px; }
+.rsvp-name-input {
+  flex: 1; min-width: 0; border: 1.5px solid var(--pistache); border-right: none;
+  padding: 14px 18px; font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; color: var(--text); background: var(--cream);
+  outline: none; transition: border-color 0.2s; font-style: italic;
+}
+.rsvp-name-input:focus { border-color: var(--musgo-dark); }
+.rsvp-name-input.error { border-color: #c0392b; animation: shake 0.4s ease; }
+.rsvp-name-input::placeholder { color: var(--text-light); opacity: 0.7; }
+.rsvp-submit-btn {
+  padding: 14px 20px; white-space: nowrap;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; letter-spacing: 2px;
+}
+.rsvp-hint {
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 2px; color: var(--text-light);
+  text-transform: uppercase; line-height: 1.6;
+}
+.rsvp-result { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.rsvp-result-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 4px;
+}
+.rsvp-confirmed-icon { background: var(--musgo-dark); }
+.rsvp-rejected-icon  { background: #a93226; }
+.rsvp-result-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 28px;
+  font-style: italic; font-weight: 500;
+}
+.rsvp-confirmed-title { color: var(--musgo-dark); }
+.rsvp-rejected-title  { color: #a93226; }
+.rsvp-result-msg {
+  font-family: 'Cormorant Garamond', serif; font-size: 18px;
+  font-style: italic; color: var(--text-mid); line-height: 1.7; text-align: center;
+}
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--musgo); color: white; border: none;
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 14px 28px; cursor: pointer;
+  text-decoration: none; transition: all 0.3s; font-weight: 500; margin-top: 4px;
+}
+.btn-whatsapp:hover { background: var(--musgo-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,122,97,0.35); }
+.rsvp-contact-link {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
+  color: var(--musgo-dark); text-decoration: none; text-transform: uppercase;
+  border-bottom: 1px solid var(--pistache); padding-bottom: 2px; transition: color 0.2s;
+}
+.rsvp-contact-link:hover { color: var(--text); }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+/* FOOTER */
+footer { text-align: center; padding: 48px 24px; border-top: 1.5px solid var(--pistache); }
+footer .footer-names {
+  font-family: 'Great Vibes', cursive; font-size: 34px;
+  color: var(--musgo-dark); display: block; margin-bottom: 8px;
+}
+footer .footer-date { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; color: var(--text-mid); }
+footer .footer-blessing {
+  font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic;
+  color: var(--text-light); margin-top: 16px;
+}
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MUSIC WIDGET */
+.music-widget {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(243,248,245,0.95); border: 1.5px solid var(--musgo);
+  padding: 10px 16px; backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(61,122,97,0.2);
+}
+.music-toggle {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid var(--musgo); background: transparent;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--musgo-dark); font-size: 14px; transition: all 0.2s;
+}
+.music-toggle:hover { background: var(--musgo-dark); color: white; }
+.music-widget-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: var(--text-light); text-transform: uppercase; }
+.music-bars { display: flex; gap: 2px; align-items: flex-end; height: 16px; }
+.music-bar { width: 3px; background: var(--musgo); border-radius: 1px; animation: musicBar 0.8s ease-in-out infinite; }
+.music-bar:nth-child(1) { height: 6px; animation-delay: 0s; }
+.music-bar:nth-child(2) { height: 12px; animation-delay: 0.15s; }
+.music-bar:nth-child(3) { height: 8px; animation-delay: 0.3s; }
+.music-bar:nth-child(4) { height: 14px; animation-delay: 0.1s; }
+.music-bar:nth-child(5) { height: 6px; animation-delay: 0.25s; }
+@keyframes musicBar { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1.2); } }
+.music-bars.paused .music-bar { animation-play-state: paused; }
+
+@media(max-width: 500px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .dress-grid { gap: 20px; }
+  .countdown-grid { gap: 8px; }
+  .countdown-num { font-size: 30px; }
+  .aviso-item { padding: 18px 16px; gap: 14px; }
+  .music-widget { bottom: 16px; right: 16px; padding: 8px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Monograma (P & J) e foto do hero ──────────────────────────────── */
+.mono-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cover-monogram-emblem {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 4px 10px rgba(50,100,79,0.14));
+}
+.hero-monogram-emblem {
+  width: clamp(64px, 16vw, 88px); height: clamp(64px, 16vw, 88px);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 2; margin: 0 14px;
+}
+/* Monograma de reserva (aparece enquanto a imagem não é enviada) */
+.mono-fallback {
+  display: flex; align-items: baseline; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; color: var(--musgo-dark);
+  line-height: 1; white-space: nowrap;
+}
+.cover-monogram-emblem .mono-fallback { font-size: clamp(46px, 14vw, 64px); }
+.hero-monogram-emblem  .mono-fallback { font-size: clamp(30px, 7vw, 40px); }
+.mono-fallback .amp { font-family: 'Great Vibes', cursive; color: var(--musgo); font-size: 0.72em; margin: 0 0.12em; }
+
+.hero-photo-wrap {
+  width: min(244px, 64vw); margin: 4px auto 30px;
+}
+.hero-photo-frame {
+  position: relative; padding: 8px; background: #fff;
+  border-radius: 122px 122px 10px 10px;
+  box-shadow: 0 14px 32px rgba(50,100,79,0.18);
+}
+.hero-photo-frame::before {
+  content: ''; position: absolute; inset: 3px;
+  border: 1px solid var(--pistache);
+  border-radius: 119px 119px 8px 8px;
+  pointer-events: none; z-index: 2;
+}
+.hero-photo-frame img { width: 100%; display: block; border-radius: 116px 116px 5px 5px; }
+</style>
+<script>
+/* Definido cedo: os handlers onerror das imagens disparam durante o parse,
+   antes do script do fim da página. */
+function hidePhoto(img, wrapId) {
+  var wrap = document.getElementById(wrapId);
+  if (wrap) wrap.style.display = 'none';
+  else if (img && img.parentNode) img.parentNode.style.display = 'none';
+}
+function monoFallback(img) {
+  var box = img.parentNode;
+  img.style.display = 'none';
+  if (box.querySelector('.mono-fallback')) return;
+  var span = document.createElement('span');
+  span.className = 'mono-fallback';
+  span.innerHTML = 'P<span class="amp">&amp;</span>J';
+  box.appendChild(span);
+}
+</script>
+</head>
+<body>
+
+<!-- SPLASH — CAPA DURA DE ÁLBUM -->
+<div id="splash">
+  <div class="album">
+    <div class="album-pages">
+      <div class="album-inner-page">
+        <div class="inner-script">Pedro Henrique<br>&amp; Joyce Kelly</div>
+        <div class="inner-sub" id="inner-sub-date">Vamos nos casar</div>
+      </div>
+    </div>
+    <div class="album-cover" id="albumCover" onclick="openInvite()">
+      <div class="album-spine"></div>
+      <div class="cover-inner">
+        <div class="cover-oval-frame">
+          <div class="cover-monogram-emblem" role="img" aria-label="Monograma P &amp; J — Pedro Henrique e Joyce Kelly">
+            <img class="mono-img" src="assets/monograma.png" alt="" onerror="monoFallback(this)">
+          </div>
+        </div>
+        <div class="cover-names">Pedro Henrique<br>&amp; Joyce Kelly</div>
+        <div class="cover-divider"></div>
+        <div class="cover-date" id="cover-date">Pontal · SP</div>
+        <div class="cover-tap">toque para abrir</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC WIDGET (fixo) -->
+<div class="music-widget" id="musicWidget" style="display:none;">
+  <div class="music-bars paused" id="musicBars">
+    <div class="music-bar"></div><div class="music-bar"></div>
+    <div class="music-bar"></div><div class="music-bar"></div>
+    <div class="music-bar"></div>
+  </div>
+  <span class="music-widget-label">Nossa Música</span>
+  <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Pausar/Tocar" aria-label="Pausar ou tocar a música">&#9654;</button>
+</div>
+
+<!-- Player do YouTube (invisível — só o som) -->
+<div id="ytPlayerHost"><div id="ytPlayer"></div></div>
+
+<!-- MAIN -->
+<div id="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-layout">
+      <div class="hero-vline hero-vline-left" aria-hidden="true"></div>
+      <div class="hero-vline hero-vline-right" aria-hidden="true"></div>
+      <div class="hero-frame">
+      <svg class="hero-corn hero-corn-left" viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="10" y1="32" x2="108" y2="32" stroke="#8fc3ab" stroke-width="1" stroke-linecap="round"/>
+        <path d="M10 32 C 6 26, 8 18, 16 14 C 24 10, 34 12, 40 18" stroke="#7cb49a" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.9"/>
+        <path d="M10 32 C 4 24, 10 14, 20 10 C 30 8, 38 14, 44 22" stroke="#9ecbb5" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.75"/>
+        <path d="M18 16 C 28 12, 48 14, 58 24" stroke="#b6dcc8" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <g transform="translate(22,14) rotate(-32)"><ellipse rx="5" ry="2.2" fill="#7cb49a" opacity="0.88"/></g>
+        <g transform="translate(32,11) rotate(-12)"><ellipse rx="4.5" ry="2" fill="#9ecbb5" opacity="0.82"/></g>
+        <g transform="translate(42,16) rotate(18)"><ellipse rx="5" ry="2.2" fill="#b6dcc8" opacity="0.8"/></g>
+        <g transform="translate(50,22) rotate(42)"><ellipse rx="4" ry="1.8" fill="#7cb49a" opacity="0.75"/></g>
+        <g transform="translate(14,22) rotate(-58)"><ellipse rx="4.5" ry="2" fill="#9ecbb5" opacity="0.8"/></g>
+        <g transform="translate(26,24) rotate(-28)"><ellipse rx="4" ry="1.8" fill="#b6dcc8" opacity="0.7"/></g>
+        <g transform="translate(36,20) rotate(8)"><ellipse rx="3.5" ry="1.6" fill="#7cb49a" opacity="0.72"/></g>
+        <circle cx="48" cy="12" r="2.4" fill="#cfe8da" opacity="0.95"/>
+        <circle cx="38" cy="10" r="1.8" fill="#bfe0cd" opacity="0.9"/>
+        <circle cx="54" cy="18" r="1.6" fill="#e0f1e8" opacity="0.85"/>
+        <circle cx="20" cy="12" r="1.7" fill="#cfe8da" opacity="0.88"/>
+        <circle cx="30" cy="8" r="1.4" fill="#bfe0cd" opacity="0.8"/>
+      </svg>
+      <svg class="hero-corn hero-corn-right" viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="10" y1="32" x2="108" y2="32" stroke="#8fc3ab" stroke-width="1" stroke-linecap="round"/>
+        <path d="M10 32 C 6 26, 8 18, 16 14 C 24 10, 34 12, 40 18" stroke="#7cb49a" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.9"/>
+        <path d="M10 32 C 4 24, 10 14, 20 10 C 30 8, 38 14, 44 22" stroke="#9ecbb5" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.75"/>
+        <path d="M18 16 C 28 12, 48 14, 58 24" stroke="#b6dcc8" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <g transform="translate(22,14) rotate(-32)"><ellipse rx="5" ry="2.2" fill="#7cb49a" opacity="0.88"/></g>
+        <g transform="translate(32,11) rotate(-12)"><ellipse rx="4.5" ry="2" fill="#9ecbb5" opacity="0.82"/></g>
+        <g transform="translate(42,16) rotate(18)"><ellipse rx="5" ry="2.2" fill="#b6dcc8" opacity="0.8"/></g>
+        <g transform="translate(50,22) rotate(42)"><ellipse rx="4" ry="1.8" fill="#7cb49a" opacity="0.75"/></g>
+        <g transform="translate(14,22) rotate(-58)"><ellipse rx="4.5" ry="2" fill="#9ecbb5" opacity="0.8"/></g>
+        <g transform="translate(26,24) rotate(-28)"><ellipse rx="4" ry="1.8" fill="#b6dcc8" opacity="0.7"/></g>
+        <g transform="translate(36,20) rotate(8)"><ellipse rx="3.5" ry="1.6" fill="#7cb49a" opacity="0.72"/></g>
+        <circle cx="48" cy="12" r="2.4" fill="#cfe8da" opacity="0.95"/>
+        <circle cx="38" cy="10" r="1.8" fill="#bfe0cd" opacity="0.9"/>
+        <circle cx="54" cy="18" r="1.6" fill="#e0f1e8" opacity="0.85"/>
+        <circle cx="20" cy="12" r="1.7" fill="#cfe8da" opacity="0.88"/>
+        <circle cx="30" cy="8" r="1.4" fill="#bfe0cd" opacity="0.8"/>
+      </svg>
+      <div class="hero-monogram-row">
+        <div class="hero-line-left"></div>
+        <div class="hero-monogram-emblem" role="img" aria-label="Monograma P &amp; J">
+          <img class="mono-img" src="assets/monograma.png" alt="" onerror="monoFallback(this)">
+        </div>
+        <div class="hero-line-right"></div>
+      </div>
+    </div>
+    <div class="hero-tagline">Com a bênção<br>de Deus</div>
+    <div class="hero-names">Pedro Henrique<br>&amp; Joyce Kelly</div>
+    <p class="hero-invite-text">Convidam você<br>para o seu casamento</p>
+    <div class="hero-photo-wrap reveal" id="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="assets/casal.jpg" alt="Pedro Henrique e Joyce Kelly" onerror="hidePhoto(this,'hero-photo-wrap')">
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Rolar</span>
+      <div class="scroll-arrow"></div>
+    </div>
+    </div>
+  </div>
+
+  <!-- MÚSICA (barra) -->
+  <div class="music-section">
+    <span class="music-label">Nossa Música</span>
+    <div class="music-player">
+      <button class="play-btn" onclick="toggleMusic()" title="Tocar / Pausar" aria-label="Tocar ou pausar a música">
+        <svg width="14" height="16" viewBox="0 0 14 16" fill="white" aria-hidden="true"><path d="M0 0 L14 8 L0 16 Z"/></svg>
+      </button>
+      <span class="music-title" id="music-title">Nossa Música</span>
+    </div>
+    <a class="music-yt-link" id="music-yt-link" href="#" target="_blank" rel="noopener">Ouvir no YouTube</a>
+  </div>
+
+  <!-- VERSÍCULO -->
+  <section>
+    <span class="section-label reveal">O nosso versículo</span>
+    <div class="message-box reveal">
+      <p class="message-text">
+        "O amor é paciente, o amor é bondoso."
+        <span class="message-ref">1 Coríntios 13, 4</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CONVITE -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Nosso convite</span>
+    <!-- ★ Noivos: troquem o texto abaixo pela história de vocês, se quiserem. ★ -->
+    <div class="story-text">
+      <p>
+        Com o coração cheio de gratidão a <strong>Deus</strong>, que escreveu cada capítulo
+        da nossa história até aqui, chegamos ao dia de dizer sim diante de quem amamos.
+      </p>
+      <p>
+        Será uma alegria imensa ter você conosco para celebrar o início da nossa família.
+        Venha rir, chorar de emoção e agradecer com a gente.
+      </p>
+    </div>
+  </section>
+
+  <!-- O GRANDE DIA (timeline) -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">O grande dia</span>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="timeline-time">18h</span>
+          <span class="timeline-title">Cerimônia</span>
+          <span class="timeline-sub">Igreja Evangélica<br>Assembleia de Deus<br>Jardim Princesa — Pontal/SP</span>
+        </div>
+        <div class="timeline-dot">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2v4M10 4h4"/><path d="M5 10l7-4 7 4v10H5z"/><rect x="9" y="14" width="6" height="6"/>
+          </svg>
+        </div>
+        <div class="timeline-right"></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"></div>
+        <div class="timeline-dot">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <div class="timeline-right">
+          <span class="timeline-time">Logo após</span>
+          <span class="timeline-title">Recepção</span>
+          <span class="timeline-sub">Espaço Shalom<br>Bairro Antonina Genari<br>Pontal — SP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMAÇÕES -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Informações</span>
+    <div class="info-grid">
+      <div class="info-card">
+        <svg class="info-card-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        <span class="info-card-label">Data</span>
+        <span class="info-card-value" id="info-data">A confirmar</span>
+      </div>
+      <div class="info-card">
+        <svg class="info-card-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+        <span class="info-card-label">Horário</span>
+        <span class="info-card-value">Cerimônia às<br>18h</span>
+      </div>
+      <div class="info-card">
+        <svg class="info-card-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <span class="info-card-label">Cerimônia</span>
+        <span class="info-card-value">Igreja Evangélica<br>Assembleia de Deus</span>
+      </div>
+      <div class="info-card">
+        <svg class="info-card-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 21h8M12 17v4M5 4h14l-1 9a6 6 0 0 1-12 0z"/><path d="M19 6h2a2 2 0 0 1 0 4h-2"/>
+        </svg>
+        <span class="info-card-label">Recepção</span>
+        <span class="info-card-value">Espaço Shalom</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Como chegar</span>
+    <div class="maps-grid">
+      <div class="map-card">
+        <span class="map-card-tag">Cerimônia</span>
+        <span class="map-card-name">Igreja Evangélica Assembleia de Deus</span>
+        <p class="map-card-addr">R. Nazaré Pedro, 580 — Jardim Princesa<br>Pontal — SP, 14180-000</p>
+        <div class="local-photo" id="foto-igreja">
+          <img src="assets/igreja.jpg" alt="Igreja Evangélica Assembleia de Deus — local da cerimônia" onerror="hidePhoto(this,'foto-igreja')">
+          <span class="local-photo-cap">Local da cerimônia</span>
+        </div>
+        <a class="map-btn" target="_blank" rel="noopener"
+           href="https://maps.app.goo.gl/PT5zFQLtcDzqgTZB8">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Abrir no mapa
+        </a>
+      </div>
+      <div class="map-card">
+        <span class="map-card-tag">Recepção</span>
+        <span class="map-card-name">Espaço Shalom</span>
+        <p class="map-card-addr">Rua Marginal Agnaldo José Mário, 120 — Bairro Antonina Genari<br>Em frente ao Domingos Moro — Pontal/SP</p>
+        <div class="local-photo" id="foto-recepcao">
+          <img src="assets/recepcao.jpg" alt="Espaço Shalom — local da recepção" onerror="hidePhoto(this,'foto-recepcao')">
+          <span class="local-photo-cap">Local da recepção</span>
+        </div>
+        <a class="map-btn" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Shalom%20Rua%20Marginal%20Agnaldo%20Jos%C3%A9%20M%C3%A1rio%20120%20Antonina%20Genari%20Pontal%20SP">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Abrir no mapa
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Dress Code</span>
+    <div class="dress-section reveal">
+      <div class="dress-grid">
+        <div class="dress-item">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 2 Q12 6 16 2 L18 8 L15 8 L15 22 L9 22 L9 8 L6 8 Z"/>
+            <path d="M9 8 Q12 11 15 8"/>
+          </svg>
+          <span class="dress-item-label">Elas</span>
+          <span class="dress-item-desc">Social Fino</span>
+        </div>
+        <div class="dress-item">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="7" y="2" width="10" height="6" rx="1"/>
+            <path d="M7 5 L4 8 L4 22 L20 22 L20 8 L17 5"/>
+            <path d="M7 8 L7 22 M17 8 L17 22"/>
+            <path d="M11 2 L11 8 M13 2 L13 8"/>
+          </svg>
+          <span class="dress-item-label">Eles</span>
+          <span class="dress-item-desc">Social Fino</span>
+        </div>
+      </div>
+      <div class="palette-row" aria-hidden="true">
+        <span class="palette-dot" style="background:#d6ecdf"></span>
+        <span class="palette-dot" style="background:#a8d5c0"></span>
+        <span class="palette-dot" style="background:#7cb49a"></span>
+        <span class="palette-dot" style="background:#3d7a61"></span>
+      </div>
+      <span class="palette-cap">Nossa paleta · Verde Menta</span>
+      <span class="dress-note">
+        Por favor, evite o branco — reservado à noiva
+      </span>
+    </div>
+  </section>
+
+  <!-- CONTAGEM REGRESSIVA -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Contagem regressiva</span>
+    <div class="countdown-wrap">
+      <div class="countdown-grid">
+        <div class="countdown-box"><span class="countdown-num" id="days">--</span><span class="countdown-label">Dias</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="hours">--</span><span class="countdown-label">Horas</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="minutes">--</span><span class="countdown-label">Min</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="seconds">--</span><span class="countdown-label">Seg</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTA DE PRESENTES -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Lista de Presentes</span>
+    <div class="gift-box reveal">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto" aria-hidden="true">
+        <path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/>
+        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+      </svg>
+      <p class="gift-text">
+        Sua presença já é o nosso maior presente.<br>
+        Mas, se desejar nos presentear,<br>deixamos algumas opções com carinho.
+      </p>
+
+      <a href="#" id="gift-link" target="_blank" rel="noopener" class="gift-btn">Ver Lista de Presentes</a>
+
+      <div class="gift-or"><span>ou contribua via Pix</span></div>
+
+      <div class="gift-pix">
+        <span class="gift-pix-type">Chave Pix &middot; Celular</span>
+        <strong class="gift-pix-key" id="pix-key-display">(16) 98823-2073</strong>
+        <span class="gift-pix-name" id="pix-name-display">Joyce Kelly de Souza Pereira</span>
+        <button type="button" class="gift-btn gift-pix-copy" id="pix-copy-btn" onclick="copyPix()">Copiar chave Pix</button>
+      </div>
+
+      <a href="#" id="gift-contact" target="_blank" rel="noopener" class="gift-contact-link">Falar com os noivos</a>
+    </div>
+  </section>
+
+  <!-- MANUAL DO CONVIDADO -->
+  <section style="padding-top: 0;">
+    <span class="section-label reveal">Manual do Convidado</span>
+    <div class="avisos-list reveal">
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 2 Q12 6 16 2 L18 8 L15 8 L15 22 L9 22 L9 8 L6 8 Z"/>
+            <path d="M9 8 Q12 11 15 8"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Traje Social Fino</span>
+          <span class="aviso-desc">Capriche no look! Por favor, evite a cor <strong>branca</strong>, reservada à noiva.</span>
+        </div>
+      </div>
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Seja Pontual</span>
+          <span class="aviso-desc">Planeje-se para chegar com antecedência. A cerimônia inicia às <strong>18h em ponto</strong>.</span>
+        </div>
+      </div>
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Convite Intransferível</span>
+          <span class="aviso-desc">Este convite é pessoal e intransferível. Convidado não convida.</span>
+        </div>
+      </div>
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="7" y="2" width="10" height="20" rx="2"/>
+            <path d="M10 8 Q12 6 14 8"/>
+            <path d="M9 11 Q12 8 15 11"/>
+            <line x1="5" y1="5" x2="19" y2="19"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Celular no Silencioso</span>
+          <span class="aviso-desc">Durante a cerimônia, mantenha seu celular no <strong>modo silencioso</strong>.</span>
+        </div>
+      </div>
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Momento sem Celular</span>
+          <span class="aviso-desc">Durante a entrada da noiva, guarde o celular e viva esse instante com a gente. Depois, fotografe à vontade!</span>
+        </div>
+      </div>
+
+      <div class="aviso-item">
+        <div class="aviso-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a61" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+        </div>
+        <div class="aviso-text">
+          <span class="aviso-title">Da Igreja à Recepção</span>
+          <span class="aviso-desc">A recepção acontece logo após a cerimônia, no <strong>Espaço Shalom</strong>. Use os botões "Abrir no mapa" para traçar a rota.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONFIRMAÇÃO -->
+  <section class="rsvp-section">
+    <span class="section-label reveal">Confirmação de Presença</span>
+
+    <div class="rsvp-card reveal" id="rsvp-step-input">
+      <p class="rsvp-intro">
+        Sua presença é fundamental para nós.<br>
+        Digite seu nome (ou apelido) para confirmar.
+      </p>
+      <div class="rsvp-input-wrap">
+        <input
+          type="text"
+          id="rsvp-name-input"
+          class="rsvp-name-input"
+          placeholder="Seu nome"
+          autocomplete="off"
+          aria-label="Seu nome"
+          onkeydown="if(event.key==='Enter') checkGuest()"
+        >
+        <button class="btn-primary rsvp-submit-btn" onclick="checkGuest()">
+          Confirmar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <p class="rsvp-hint">Confirme com carinho para ajudar os noivos na organização.</p>
+    </div>
+
+    <!-- ESTADO: CONFIRMADO -->
+    <div class="rsvp-card rsvp-result" id="rsvp-step-confirmed" style="display:none;">
+      <div class="rsvp-result-icon rsvp-confirmed-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h3 class="rsvp-result-title rsvp-confirmed-title">Presença Confirmada!</h3>
+      <p class="rsvp-result-msg" id="rsvp-confirmed-msg"></p>
+      <a id="rsvp-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Avisar os Noivos pelo WhatsApp
+      </a>
+    </div>
+
+    <!-- ESTADO: NÃO ENCONTRADO (só usado se a lista de convidados for preenchida) -->
+    <div class="rsvp-card rsvp-result" id="rsvp-step-rejected" style="display:none;">
+      <div class="rsvp-result-icon rsvp-rejected-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </div>
+      <h3 class="rsvp-result-title rsvp-rejected-title">Nome não encontrado</h3>
+      <p class="rsvp-result-msg">Não encontramos seu nome na lista de convidados. Verifique se digitou corretamente ou fale com os noivos.</p>
+      <button class="btn-secondary" onclick="resetRSVP()" style="margin-top:8px;">
+        Tentar novamente
+      </button>
+      <a id="rsvp-reject-wa" href="#" target="_blank" rel="noopener" class="rsvp-contact-link">
+        Falar com os noivos
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <span class="footer-names">Pedro Henrique &amp; Joyce Kelly</span>
+    <span class="footer-date" id="footer-date">Pontal · SP</span>
+    <p class="footer-blessing">Com a bênção de Deus, para sempre.</p>
+  </footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   ★ EDITE AQUI ★  — Personalize as informações principais do convite
+════════════════════════════════════════════════════════════════════ */
+
+// Data e hora do casamento (formato: 'AAAA-MM-DDThh:mm:ss').
+var DATA_ISO     = '2026-11-28T18:00:00';      // 28 de novembro de 2026, 18h
+var DATA_EXTENSO = '28 de novembro de 2026';   // (mostrada nas informações)
+var DATA_CURTA   = '28 · Novembro · 2026';     // (mostrada na capa e no rodapé)
+
+// Nomes dos noivos (usados nas mensagens de WhatsApp)
+var NOIVOS = 'Pedro Henrique e Joyce Kelly';
+
+// WhatsApp para confirmação de presença (apenas números, com DDI 55 e DDD).
+var WHATSAPP_NUM = '5516988232073';
+
+// Chave Pix (celular da noiva)
+var PIX_TIPO  = 'Celular';
+var PIX_KEY   = '(16) 98823-2073';             // exibida no convite
+var PIX_COPIA = '+5516988232073';              // valor copiado ao tocar em "Copiar"
+var PIX_NOME  = 'Joyce Kelly de Souza Pereira';
+
+// Lista de presentes
+var LINK_PRESENTES = 'https://noivos.casar.com/pedro-e-joyce-28-11-2026';
+
+// Nossa música (YouTube). Coloque só o ID do vídeo.
+var MUSICA_YT_ID  = 'n991QaNmEbA';
+var MUSICA_TITULO = 'Nossa Música';            // ★ troque pelo nome da música ★
+
+/* Lista de convidados.
+   - Se o array estiver VAZIO ( [] ), o convite aceita qualquer nome digitado.
+   - Com nomes na lista, só os convidados confirmam; quem não estiver vê o aviso
+     "nome não encontrado". A checagem ignora acentos e maiúsculas/minúsculas, e
+     também aceita só o primeiro nome (ex.: "Aline" confirma "Aline Vitória"). */
+var GUEST_LIST = [];
+
+/* ════════════════════════════════════════════════════════════════════
+   A partir daqui, normalmente não é preciso alterar nada.
+════════════════════════════════════════════════════════════════════ */
+
+/* ── Preenche textos com base na configuração ───────────────────────── */
+(function applyConfig() {
+  var curta   = DATA_CURTA   ? DATA_CURTA   : 'Pontal · SP';
+  var extenso = DATA_EXTENSO ? DATA_EXTENSO : 'A confirmar';
+  var setTxt = function (id, val) { var el = document.getElementById(id); if (el) el.innerHTML = val; };
+  setTxt('cover-date', curta);
+  setTxt('footer-date', curta);
+  setTxt('inner-sub-date', DATA_CURTA ? DATA_CURTA : 'Vamos nos casar');
+  setTxt('info-data', extenso);
+
+  // Música
+  setTxt('music-title', MUSICA_TITULO);
+  var ytLink = document.getElementById('music-yt-link');
+  if (ytLink) ytLink.href = 'https://www.youtube.com/watch?v=' + MUSICA_YT_ID;
+
+  // Link de presentes
+  var giftEl = document.getElementById('gift-link');
+  if (giftEl) {
+    if (LINK_PRESENTES) {
+      giftEl.href = LINK_PRESENTES;
+      giftEl.textContent = 'Ver Lista de Presentes';
+    } else {
+      giftEl.href = 'https://wa.me/' + WHATSAPP_NUM +
+        '?text=' + encodeURIComponent('Olá, ' + NOIVOS + '! Gostaria de saber sobre a lista de presentes. 💚');
+    }
+  }
+  // Chave Pix
+  setTxt('pix-key-display', PIX_KEY);
+  setTxt('pix-name-display', PIX_NOME);
+  // Falar com os noivos (presentes)
+  var giftContact = document.getElementById('gift-contact');
+  if (giftContact) {
+    giftContact.href = 'https://wa.me/' + WHATSAPP_NUM +
+      '?text=' + encodeURIComponent('Olá, ' + NOIVOS + '! Gostaria de falar sobre a lista de presentes. 💚');
+  }
+  // Link de contato no estado "não encontrado"
+  var rejWa = document.getElementById('rsvp-reject-wa');
+  if (rejWa) {
+    rejWa.href = 'https://wa.me/' + WHATSAPP_NUM +
+      '?text=' + encodeURIComponent('Olá! Tentei confirmar minha presença no casamento de ' + NOIVOS + ', mas meu nome não foi encontrado. Podem me ajudar?');
+  }
+})();
+
+/* ── Copiar chave Pix ──────────────────────────────────────────────── */
+function fallbackCopy(text) {
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+  } catch (e) {}
+}
+function copyPix() {
+  var btn = document.getElementById('pix-copy-btn');
+  var feedback = function () {
+    if (!btn) return;
+    if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);
+    btn.textContent = 'Chave Pix copiada ✓';
+    setTimeout(function () { btn.textContent = btn.getAttribute('data-label'); }, 2200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(PIX_COPIA).then(feedback).catch(function () { fallbackCopy(PIX_COPIA); feedback(); });
+  } else {
+    fallbackCopy(PIX_COPIA); feedback();
+  }
+}
+
+/* ── RSVP ──────────────────────────────────────────────────────────── */
+function normalize(str) {
+  return str.normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function checkGuest() {
+  var input = document.getElementById('rsvp-name-input');
+  var name  = input.value.trim();
+
+  if (!name) {
+    input.classList.add('error');
+    input.placeholder = 'Digite seu nome';
+    setTimeout(function () { input.classList.remove('error'); input.placeholder = 'Seu nome'; }, 2000);
+    return;
+  }
+
+  var normInput = normalize(name);
+  // Lista vazia => aceita qualquer nome. Lista preenchida => valida o nome digitado.
+  var found = GUEST_LIST.length === 0 || GUEST_LIST.some(function (g) {
+    var ng = normalize(g);
+    // confere o nome completo OU apenas o primeiro nome de um convidado da lista
+    return ng === normInput || ng.split(' ')[0] === normInput;
+  });
+
+  document.getElementById('rsvp-step-input').style.display = 'none';
+
+  if (found) {
+    var fullNameCap = name.split(' ').map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    }).join(' ');
+
+    document.getElementById('rsvp-confirmed-msg').innerHTML =
+      'Que alegria, <strong>' + fullNameCap + '</strong>!<br>Sua presença foi confirmada. Mal podemos esperar para celebrar com você! 💚';
+
+    var dataFrase = DATA_EXTENSO ? (' no dia ' + DATA_EXTENSO) : '';
+    var waText = encodeURIComponent(
+      'Olá, ' + NOIVOS + '! 💚\n\nEu, *' + fullNameCap + '*, confirmo minha presença no casamento de vocês' + dataFrase + '!\n\nEstou muito feliz para celebrar esse momento especial com vocês! 🎉'
+    );
+    document.getElementById('rsvp-whatsapp-btn').href = 'https://wa.me/' + WHATSAPP_NUM + '?text=' + waText;
+
+    document.getElementById('rsvp-step-confirmed').style.display = 'flex';
+  } else {
+    document.getElementById('rsvp-step-rejected').style.display = 'flex';
+  }
+}
+
+function resetRSVP() {
+  document.getElementById('rsvp-name-input').value = '';
+  document.getElementById('rsvp-step-rejected').style.display = 'none';
+  document.getElementById('rsvp-step-confirmed').style.display = 'none';
+  document.getElementById('rsvp-step-input').style.display = 'block';
+}
+
+/* ── TRILHA SONORA (YouTube, sem vídeo à vista) ─────────────────────── */
+var ytPlayer = null;
+var ytReady = false;
+var musicPlaying = false;
+var pendingPlay = false;
+
+(function loadYT() {
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  tag.async = true;
+  var first = document.getElementsByTagName('script')[0];
+  first.parentNode.insertBefore(tag, first);
+})();
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('ytPlayer', {
+    height: '1', width: '1', videoId: MUSICA_YT_ID,
+    playerVars: {
+      autoplay: 0, controls: 0, disablekb: 1, fs: 0,
+      modestbranding: 1, rel: 0, playsinline: 1,
+      loop: 1, playlist: MUSICA_YT_ID
+    },
+    events: {
+      onReady: function () {
+        ytReady = true;
+        try { ytPlayer.setVolume(55); } catch (e) {}
+        if (pendingPlay) { pendingPlay = false; playMusic(); }
+      },
+      onStateChange: function (e) {
+        if (e.data === YT.PlayerState.PLAYING) musicPlaying = true;
+        else if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED) musicPlaying = false;
+        reflectMusicState();
+      }
+    }
+  });
+}
+
+function reflectMusicState() {
+  var t = document.getElementById('musicToggle');
+  var bars = document.getElementById('musicBars');
+  if (musicPlaying) {
+    if (t) t.innerHTML = '&#9646;&#9646;';   // ▌▌ (pausar)
+    if (bars) bars.classList.remove('paused');
+  } else {
+    if (t) t.innerHTML = '&#9654;';          // ▶ (tocar)
+    if (bars) bars.classList.add('paused');
+  }
+}
+
+function playMusic() {
+  if (!ytReady || !ytPlayer) { pendingPlay = true; return; }
+  try { ytPlayer.playVideo(); } catch (e) {}
+}
+
+function pauseMusic() {
+  pendingPlay = false;
+  if (!ytReady || !ytPlayer) return;
+  try { ytPlayer.pauseVideo(); } catch (e) {}
+  musicPlaying = false;
+  reflectMusicState();
+}
+
+function toggleMusic() {
+  if (musicPlaying) pauseMusic();
+  else playMusic();
+}
+
+/* ── SPLASH → MAIN ─────────────────────────────────────────────────── */
+var inviteOpened = false;
+function openInvite() {
+  if (inviteOpened) return;
+  inviteOpened = true;
+  // Inicia a música DENTRO do gesto de toque — necessário p/ iOS/Android tocarem com som.
+  playMusic();
+  var splash = document.getElementById('splash');
+  splash.classList.add('opening');
+  setTimeout(function () {
+    splash.style.opacity = '0';
+    setTimeout(function () {
+      splash.style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+      document.getElementById('musicWidget').style.display = 'flex';
+      initScrollAnimations();
+      startCountdown();
+      reflectMusicState();
+      window.scrollTo(0, 0);
+    }, 800);
+  }, 1500);
+}
+
+/* ── COUNTDOWN ─────────────────────────────────────────────────────── */
+function startCountdown() {
+  if (!DATA_ISO) return; // sem data definida: mantém "--"
+  var target = new Date(DATA_ISO);
+  if (isNaN(target.getTime())) return;
+  function update() {
+    var diff = target - new Date();
+    if (diff <= 0) {
+      ['days', 'hours', 'minutes', 'seconds'].forEach(function (id) {
+        document.getElementById(id).textContent = '00';
+      });
+      return;
+    }
+    document.getElementById('days').textContent    = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    document.getElementById('hours').textContent   = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  }
+  update(); setInterval(update, 1000);
+}
+
+/* ── SCROLL ANIMATIONS ─────────────────────────────────────────────── */
+function initScrollAnimations() {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .timeline-item, .info-card, .map-card, .countdown-wrap, .message-box, .gift-box, .story-text')
+    .forEach(function (el) { observer.observe(el); });
+}
+
+/* ── ATALHO DE TECLADO (barra de espaço pausa/toca a música) ────────── */
+document.addEventListener('keydown', function (e) {
+  if ((e.code === 'Space' || e.key === ' ') && inviteOpened) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (tag !== 'input' && tag !== 'textarea') { e.preventDefault(); toggleMusic(); }
+  }
+});
+</script>
+</body>
+</html>
