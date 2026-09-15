@@ -48,8 +48,11 @@ var GUEST_LIST = ["Maria Clara", "João Pedro", "Ana"];
 
 ### Fotos
 
-Veja `assets/LEIA-ME.md`. O convite funciona normalmente antes de as fotos
-serem enviadas.
+Monograma, foto do casal e foto da recepção já estão no ar. Falta apenas a
+**foto da igreja** (`assets/igreja.jpg`) — é só colocar o arquivo na pasta
+`assets/` com esse nome que ela aparece sozinha.
+
+Detalhes em `assets/LEIA-ME.md`.
 
 ## Paleta — Verde Menta
 
