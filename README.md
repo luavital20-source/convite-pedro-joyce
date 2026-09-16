@@ -34,28 +34,18 @@ no início do `<script>` no fim do `index.html`:
 | `PIX_TIPO`, `PIX_KEY`, `PIX_COPIA`, `PIX_NOME` | dados do Pix |
 | `LINK_PRESENTES` | link da lista de presentes |
 | `MUSICA_YT_ID`, `MUSICA_TITULO` | música do convite (ID do vídeo no YouTube) |
-| `GUEST_LIST` | lista de convidados (veja abaixo) |
 
 ### Confirmação de presença
 
-O convidado digita o nome e toca em **Confirmar pelo WhatsApp**. Isso abre a
-conversa com `WHATSAPP_NUM` com a mensagem já escrita — ele só precisa tocar em
-enviar. O número também aparece clicável logo abaixo do botão.
+Um botão só: **Confirmar pelo WhatsApp**. Ele abre a conversa com
+`WHATSAPP_NUM` com a mensagem já escrita — o convidado só toca em enviar.
+O número também aparece clicável logo abaixo.
 
-A tela seguinte diz "Só falta enviar!" de propósito: o convite não tem como
-saber se a mensagem foi enviada, então ele não afirma que a presença está
-confirmada — quem confirma é a mensagem chegando no WhatsApp de vocês.
+Não há formulário: quem confirma se identifica pelo próprio WhatsApp, e o
+convite não promete que a presença está confirmada, porque a página não tem
+como saber se a mensagem foi enviada.
 
-### Lista de convidados (RSVP)
-
-- `GUEST_LIST = []` (como está agora) → **qualquer nome** digitado é aceito.
-- Com nomes preenchidos → só quem está na lista confirma; os demais veem
-  "nome não encontrado". A busca ignora acentos e maiúsculas, e aceita só o
-  primeiro nome.
-
-```js
-var GUEST_LIST = ["Maria Clara", "João Pedro", "Ana"];
-```
+Para mudar o texto da mensagem, edite a função `linkWhatsApp()`.
 
 ### Fotos
 
